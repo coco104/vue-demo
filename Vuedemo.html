@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vuedemo</title>
+    <link rel="stylesheet" herf="Vuedemo.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="hello">
+        {{ message }}
+    </div>
+    <div id="html">
+        <p>have a try:<span style="color:red">This will be red words.</span></p>
+    </div>
+    <div id="see">
+        <p v-if="seen">现在能看到我了</p>
+    </div>
+    <div id="turn">
+        <p>原信息为：
+            <input v-model="words">
+            <button v-on:click="reverseMessage">倒转</button>
+        </p>
+        <p>倒转后信息为："{{ aftermessage }}"</p>
+    </div>
+    <div class="static"
+            v-bind:class="{ active: isActive, 'text-danger': hasError }">
+    </div>
+    <div id="style" v-bind:style="styleObject">lalala</div>
+    <div id="if"><h1 v-if="judge">好好学习</h1>
+                 <h1 v-else>不想学习 😢</h1>
+    </div>
+    <div id="vif">
+    <div v-if="type === 'A'">
+        A
+    </div>
+    <div v-else-if="type === 'B'">
+        B
+    </div>
+    <div v-else-if="type === 'C'">
+        C
+    </div>
+    <div v-else>
+        Not A/B/C
+    </div>
+    </div>
+    <div id="example-1">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+    </div>
+    <div id='example-2'>
+        <input type="checkbox" id="zhangsan" value="zhangsan" v-model="checkedNames">
+        <label for="zhangsan">zhangsan</label>
+        <input type="checkbox" id="lisi" value="lisi" v-model="checkedNames">
+        <label for="lisi">lisi</label>
+        <input type="checkbox" id="wangwu" value="wangwu" v-model="checkedNames">
+        <label for="wangwu">wangwu</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <div id="example-3">
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>学习</option>
+            <option>运动</option>
+            <option>睡觉</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <div id="components-demo">
+        <button-counter></button-counter>
+    </div>
+    <div id="components-demo1">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+    <script src="Vuedemo.js"></script>
+</body>
+</html>
